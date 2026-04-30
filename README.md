@@ -5,7 +5,7 @@
 
 <!-- Typing animation -->
 <a href="https://github.com/FideleDonadje">
-  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=18&pause=1000&color=00B4D8&center=true&vCenter=true&width=620&lines=Building+AI-powered+security+tooling+on+AWS;Bedrock+%7C+CDK+%7C+Lambda+%7C+Security+Hub;Turning+findings+into+automation;Design-first.+Infrastructure-as-code-always." alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=18&pause=1000&color=00B4D8&center=true&vCenter=true&width=650&lines=Building+AI-powered+security+tooling+on+AWS;Bedrock+%7C+CDK+%7C+Lambda+%7C+Security+Hub;From+findings+to+full+RMF+compliance+packages;Design-first.+Infrastructure-as-code-always." alt="Typing SVG" />
 </a>
 
 <br/>
@@ -19,10 +19,10 @@
 
 ## 👋 About Me
 
-I'm a cloud security engineer building production-grade tooling on AWS. My focus is the intersection of **cloud security**, **AI automation**, and **compliance engineering** — turning noisy security findings into structured, actionable outputs.
+I'm a cloud security engineer building production-grade tooling on AWS. My focus is the intersection of **cloud security**, **AI automation**, and **compliance engineering** — turning noisy security findings into structured, actionable outputs including full RMF compliance packages.
 
-- 🚀 Shipped a fully deployed **AI-Powered SOC Triage Agent** using AWS Bedrock AgentCore, CDK, Lambda, DynamoDB Streams, and a React frontend with Cognito auth
-- 🔨 Currently building **ATO Assist Mode** — pulls NIST 800-53 findings from Security Hub, uses Bedrock to draft control implementation statements, and auto-generates POA&M entries
+- 🚀 Shipped a 3-feature AWS security platform: AI SOC Triage, ATO Assist Mode, and a full NIST RMF Workspace with live artifact generation
+- 📋 The RMF Workspace walks through all 7 NIST RMF steps and auto-generates the SSP, SAR, Risk Assessment, POA&M, and FIPS 199 categorization from live Security Hub findings
 - ⚡ Everything I build is infrastructure-as-code first (AWS CDK), no manual console changes
 - 🧠 Design-first workflow: architecture is thought through before a line of code is written, and I own every decision
 
@@ -40,6 +40,7 @@ I'm a cloud security engineer building production-grade tooling on AWS. My focus
 ![DynamoDB](https://img.shields.io/badge/DynamoDB-4053D6?style=flat-square&logo=amazondynamodb&logoColor=white)
 ![Cognito](https://img.shields.io/badge/Cognito-DD344C?style=flat-square&logo=amazonaws&logoColor=white)
 ![IAM](https://img.shields.io/badge/IAM-232F3E?style=flat-square&logo=amazonaws&logoColor=FF9900)
+![S3](https://img.shields.io/badge/S3-569A31?style=flat-square&logo=amazons3&logoColor=white)
 
 **Languages & Frameworks**
 
@@ -60,28 +61,27 @@ I'm a cloud security engineer building production-grade tooling on AWS. My focus
 **Compliance**
 
 ![NIST 800-53](https://img.shields.io/badge/NIST%20800--53-1a3a5c?style=flat-square)
-![ATO](https://img.shields.io/badge/ATO%20%2F%20POA%26M-00b4d8?style=flat-square)
-![SSP](https://img.shields.io/badge/SSP-1a3a5c?style=flat-square)
+![NIST RMF](https://img.shields.io/badge/NIST%20RMF-00b4d8?style=flat-square)
+![ATO](https://img.shields.io/badge/ATO%20%2F%20POA%26M-1a3a5c?style=flat-square)
+![SSP](https://img.shields.io/badge/SSP%20%2F%20SAR-00b4d8?style=flat-square)
+![FIPS 199](https://img.shields.io/badge/FIPS%20199-1a3a5c?style=flat-square)
 
 ---
 
 ## 🔐 Portfolio Projects
 
-### ✅ [aws-security-triage-agent](https://github.com/FideleDonadje/aws-security-triage-agent)
-> Fully deployed AI-powered SOC triage agent on AWS
+### ✅ [security-triage-agent](https://github.com/FideleDonadje/security-triage-agent)
+> AI-powered AWS security platform — Triage, ATO Assist, and NIST RMF Workspace
 
-An agentic AI system that surfaces Security Hub findings, proposes Tier 1 remediation actions, and executes approved responses autonomously — with human-in-the-loop approval and a production React/Cognito frontend.
+A fully deployed, 3-feature security platform built on AWS:
 
-`AWS Bedrock AgentCore` `CDK` `Lambda` `DynamoDB Streams` `Security Hub` `React/Vite` `TypeScript` `Cognito`
+**SOC Triage Agent** — ingests Security Hub findings, routes them through an AI triage workflow using Bedrock AgentCore, and executes approved Tier 1 remediation actions with human-in-the-loop approval via a React/Cognito frontend.
 
----
+**ATO Assist Mode** — pulls NIST 800-53 findings from Security Hub grouped by control family, uses Bedrock to draft control implementation statements, and auto-generates POA&M entries from failed findings.
 
-### 🔨 ATO Assist Mode *(in progress)*
-> NIST 800-53 compliance automation built on top of the Triage Agent
+**NIST RMF Workspace** — a full 7-step RMF workflow dashboard. Covers system categorization (FIPS 199), control selection, implementation tracking, security assessment, authorization package generation, and continuous monitoring. Auto-generates the SSP, Security Assessment Report, and Risk Assessment from live Security Hub data. Every artifact has a Regenerate button so documents always reflect current environment state.
 
-Pulls Security Hub findings grouped by NIST control family, uses a Bedrock LLM to draft control implementation statements, and auto-generates POA&M entries from failed findings. Batch and document-oriented architecture, not routed through AgentCore.
-
-`AWS Bedrock` `Security Hub` `NIST 800-53` `CDK` `Lambda` `DynamoDB` `TypeScript`
+`AWS Bedrock AgentCore` `CDK` `Lambda` `DynamoDB Streams` `Security Hub` `React/Vite` `TypeScript` `Cognito` `S3`
 
 ---
 
@@ -109,10 +109,10 @@ Produces auditable JSON and Markdown reports showing exactly which AWS security 
 
 | Status | Project | Description |
 |--------|---------|-------------|
-| 🔨 In Progress | ATO Assist Mode | NIST 800-53 control statement generation + POA&M from Security Hub |
-| 📋 Planned | CI/CD Security Gate | Pre-deploy scanning with Checkov/tfsec in GitHub Actions |
+| 🔨 In Progress | CI/CD Security Gate | Pre-deploy IaC scanning with Checkov/tfsec in GitHub Actions |
 | 📋 Planned | Greenfield AWS Setup Guide | Blog post on secure account bootstrapping from scratch |
 | 📋 Planned | IAM Policy Analyzer | Detect overpermissioned policies before they reach production |
+| 📋 Planned | Infrastructure Drift Detector | Alert on live AWS config deviating from CDK-defined state |
 
 ---
 
